@@ -26,7 +26,7 @@ jobs:
     - name: print env2
       run: echo $Env:PATH
     
-    - namme: NuGet restore
+    - name: NuGet restore
       run: nuget restore Frends.Community.LDAP.sln
 
     - name: MSBuild
