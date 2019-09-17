@@ -16,6 +16,13 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
 
+    - name: print env
+      run: echo %PATH%
+     
+    - name: print env2
+      run: echo $Env:PATH
+    
+
     - name: Setup MSBuild.exe
       uses: warrenbuckley/Setup-MSBuild@v1
 
