@@ -14,4 +14,4 @@ jobs:
 
 
     - name: MSBuild
-      run: ""C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe" Frends.Community.LDAP.sln"
+      run: C:\"Program Files (x86)"\"Microsoft Visual Studio"\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe Frends.Community.LDAP.sln
