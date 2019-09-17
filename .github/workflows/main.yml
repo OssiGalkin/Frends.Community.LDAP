@@ -31,3 +31,4 @@ jobs:
       run: |
       msbuild /t:restore Frends.Community.LDAP.sln
       msbuild Frends.Community.LDAP.sln
+    - run: echo "A initial message"
