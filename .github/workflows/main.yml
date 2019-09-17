@@ -15,5 +15,10 @@ jobs:
       run: |
         echo Add other actions to build,
         echo test, and deploy your project.
-    - name: first try
+
+    - name: Setup MSBuild.exe
+      uses: warrenbuckley/Setup-MSBuild@v1
+
+    - name: MSBuild
+      #working-directory: src
       run: msbuild Frends.Community.LDAP.sln
