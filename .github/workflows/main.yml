@@ -28,5 +28,6 @@ jobs:
 
     - name: MSBuild
       #working-directory: src
-      run: msbuild /t:restore Frends.Community.LDAP.sln
-      run: msbuild Frends.Community.LDAP.sln
+      run: |
+      msbuild /t:restore Frends.Community.LDAP.sln
+      msbuild Frends.Community.LDAP.sln
