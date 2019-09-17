@@ -26,11 +26,7 @@ jobs:
     - name: print env2
       run: echo $Env:PATH
 
-    - name: MSBuild restore
-      #working-directory: src
-      run: msbuild /t:restore Frends.Community.LDAP.sln
-
-
     - name: MSBuild
       #working-directory: src
+      run: msbuild /t:restore Frends.Community.LDAP.sln
       run: msbuild Frends.Community.LDAP.sln
