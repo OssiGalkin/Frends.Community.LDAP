@@ -3,42 +3,26 @@ name: CI_testing
 on: [push]
 # nice example: https://github.com/microsoft/vs-editor-api/blob/master/.github/workflows/main.yml
 
-
-
 jobs:
   build:
-
-    runs-on: windows-2019
+    name: Build on ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-18.04, windows-2019]
+        include:
+          - os: ubuntu-18.04
+            msbuild: dotnet msbuild
+          - os: windows-latest
+            msbuild: '"%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe"'
 
     steps:
-    
-
     - uses: actions/checkout@v1
-    - name: Run a one-line script
-      run: echo Hello, world!
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
-        
-        
-    - name: Setup MSBuild.exe
-      uses: warrenbuckley/Setup-MSBuild@v1
-      
-    - name: print env
-      run: echo %PATH%
-     
-    - name: print env2
-      run: echo $Env:PATH
 
-    - name: MSBuild restore
-      #working-directory: src
-      run: msbuild /t:restore Frends.Community.LDAP.sln
-       #msbuild Frends.Community.LDAP.sln
-        
-    - name: build
-      run: ${{MSBUILDKK}} -m Frends.Community.LDAP.sln
-      
-      env:
-        MSBUILDKK: '"%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe"'
-    
+    - name: Restore NuGet Packages
+      run: |
+        ${{ matrix.msbuild }} VSEditorCore.proj /noautoresponse /t:Restore /p:BuildTests=false
+    - name: Build
+      run: |
+        ${{ matrix.msbuild }} VSEditorCore.proj /noautoresponse /t:Build /p:BuildTests=false
