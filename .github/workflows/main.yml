@@ -12,9 +12,7 @@ jobs:
 
     steps:
     
-    env:
-      msbuildkk: ${{ 'Mona the Octocat' }}
-    
+
     - uses: actions/checkout@v1
     - name: Run a one-line script
       run: echo Hello, world!
@@ -40,3 +38,7 @@ jobs:
         
     - name: build
       run: msbuildkk -m Frends.Community.LDAP.sln
+      
+      env:
+        msbuildkk: ${{ 'Mona the Octocat' }}
+    
