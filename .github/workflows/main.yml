@@ -37,8 +37,8 @@ jobs:
        #msbuild Frends.Community.LDAP.sln
         
     - name: build
-      run: msbuildkk -m Frends.Community.LDAP.sln
+      run: MSBUILDKK -m Frends.Community.LDAP.sln
       
       env:
-        msbuildkk: '"%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe"'
+        MSBUILDKK: '"%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe"'
     
