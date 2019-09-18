@@ -1,7 +1,5 @@
 ﻿using NUnit.Framework;
 using System.Collections.Generic;
-using System.Configuration;
-using System.Diagnostics;
 using Frends.Community.LDAP.Models;
 using Frends.Community.LDAP;
 using TestConfigurationHandler;
