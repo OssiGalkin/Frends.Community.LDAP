@@ -26,8 +26,10 @@ jobs:
     - name: print env2
       run: echo $Env:PATH
 
-    - name: MSBuild
+    - name: MSBuild restore
       #working-directory: src
-      run: |
-        msbuild /t:restore Frends.Community.LDAP.sln
-        msbuild Frends.Community.LDAP.sln
+      run: msbuild /t:restore Frends.Community.LDAP.sln
+       #msbuild Frends.Community.LDAP.sln
+        
+    - name: build
+      run: '"%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe"' -m Frends.Community.LDAP.sln
