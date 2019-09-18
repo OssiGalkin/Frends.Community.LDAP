@@ -13,7 +13,7 @@ jobs:
     steps:
     
     env:
-      msbuildkk: ${{ '"%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe"' }}
+      msbuildkk: ${{ 'Mona the Octocat' }}
     
     - uses: actions/checkout@v1
     - name: Run a one-line script
