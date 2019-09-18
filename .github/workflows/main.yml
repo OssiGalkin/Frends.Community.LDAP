@@ -10,7 +10,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-18.04, windows-2019]
+        os: [windows-2019]
         include:
           - os: ubuntu-18.04
             msbuild: dotnet msbuild
