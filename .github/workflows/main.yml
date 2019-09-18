@@ -24,7 +24,13 @@ jobs:
 
     - name: Restore NuGet Packages
       run: |
-        ${{ matrix.msbuild }} Frends.Community.LDAP.sln /noautoresponse /t:Restore /p:BuildTests=false
+        ${{ matrix.msbuild }} Frends.Community.LDAP.sln /t:Restore
     - name: Build
       run: |
-        ${{ matrix.msbuild }} Frends.Community.LDAP.sln /noautoresponse /t:Build /p:BuildTests=false
+        ${{ matrix.msbuild }} Frends.Community.LDAP.sln /t:Build
+    
+    - name: Test
+      run: dotnet test Frends.Community.LDAP.sln 
+                
+        
+        # dotnet test 
