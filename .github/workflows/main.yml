@@ -22,7 +22,7 @@ jobs:
 
     - name: Restore NuGet Packages
       run: |
-        ${{ matrix.msbuild }} VSEditorCore.proj /noautoresponse /t:Restore /p:BuildTests=false
+        ${{ matrix.msbuild }} Frends.Community.LDAP.sln /noautoresponse /t:Restore /p:BuildTests=false
     - name: Build
       run: |
-        ${{ matrix.msbuild }} VSEditorCore.proj /noautoresponse /t:Build /p:BuildTests=false
+        ${{ matrix.msbuild }} Frends.Community.LDAP.sln /noautoresponse /t:Build /p:BuildTests=false
