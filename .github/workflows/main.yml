@@ -3,15 +3,15 @@ name: CI_testing
 on: [push]
 # nice example: https://github.com/microsoft/vs-editor-api/blob/master/.github/workflows/main.yml
 
+evn:
+  msbuildkk: ${{'"%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe"'}}
+    
+
 jobs:
   build:
 
     runs-on: windows-2019
-    
-    include:
-      - os: windows-latest
-        msbuildkk: '"%ProgramFiles(x86)%\Microsoft Visual Studio\2019\Enterprise\MSBuild\Current\Bin\MSBuild.exe"'
-    
+
     steps:
     - uses: actions/checkout@v1
     - name: Run a one-line script
