@@ -26,8 +26,7 @@ jobs:
       run: |
         ${{ matrix.msbuild }} Frends.Community.LDAP.sln /t:Restore
     - name: Build
-      run: |
-        ${{ matrix.msbuild }} Frends.Community.LDAP.sln /t:Build
+      run: ${{ matrix.msbuild }} Frends.Community.LDAP.sln /t:Build
     
     - name: Test
       run: dotnet test Frends.Community.LDAP.sln 
